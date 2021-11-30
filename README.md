@@ -1,2 +1,2 @@
 # tutorial
-to learn git
+To teach GIT to first batch
