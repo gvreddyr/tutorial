@@ -1,0 +1,48 @@
+GIT
+
+——————
+
+- Version control system
+- Collaborative work
+- Distributed environment to work
+- Secured with Authentication
+
+Process
+	1. Copy the ‘master’ branch code from git server to your local machine using git clone command
+	2. Create the branch out of master using git checkout command
+	3. Make the changes you want add(git add) with message about changes(git commit -m) and update(git push) your changes into your branch
+	4. Review your branch changes comparing with parent branch code with your lead or peers - Merger request/Pull request - through browser
+	5. Let them merge your branch into master - through browser
+	6. Now master is having your changes for others to take it(git pull)
+
+Generate your local machine ssh keys
+#ssh-keygen
+	- copy the content of ~/.ssh/id_rsa.pub to your git profile on the server
+	#cat ~/.ssh/id_rsa.pub
+
+#git clone <SSH url or HTTPS url>
+	- gets a copy from git to server to your local machine/client using ‘clone’ command
+
+#git status
+	- to show you on which branch that you’re in
+	- to show you what are all the files that you’ve modified
+
+#git checkout -b <your_branch_name>
+	- to create a new branch if it doesn’t exists
+
+#git checkout <branch_name>
+	- to switch to branch that you want
+
+#git add <files/directories>
+	- to mention about the files or directories that you have modified/created to commit
+
+#git commit -m “<description about the change>”
+
+#git push
+	- push your local changes in to your branch in the server
+	#git push --set-upstream origin ui_automation ===> in case this branch ui_automation isn’t available yet on the server
+
+
+
+
+
