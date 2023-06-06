@@ -1,0 +1,120 @@
+Selenium is an open source portable framework used to automate testing of web applications. 
+
+Browsers
+—————
+	1. Chrome
+	2. Firefox
+	3. Edge
+	4. Safari
+	4. Opera
+
+
+Web elements Identification in the page
+============================== How do you identify an element in the page?
+1. By Name
+2. By Id
+3. By Class
+4. XPATH 
+    1. Absolute   —> /html//body/div/div/form/div[1]/div/div[1]/div/div[2]/textarea/
+    2. Relative   —> //textarea[@name='q']
+            1. //Tag[@attr=‘value’]
+TAV
+
+<input     =======> Tag
+
+Attribute	<====== name="firstname"    =====> Value
+	style="-webkit-appearance:none;appearance:none;background-color:#fcfcfc;border-color:rgba(173,176,182,.3);border-radius:0;border-style:solid;border-width:1px;color:#787d85;font-family:verdana,helvetica,arial,verdana,sans-serif;font-size:13px;height:38px;line-height:22px;margin:0;outline:0;padding:5px 15px;vertical-align:baseline" 
+>
+
+
+By Name
+By Id
+By Class
+
+
+=========================
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+
+
+UI Actions
+——————
+1. URL
+    1. driver.get("https://www.google.com/")
+3. Text box - we can enter some text
+    1. elem.send_keys()
+    2. elem.send_keys(keys.RETURN)
+5. Buttons/Checkboxes/Links
+    1. elem.click()
+7. Drop down
+    1. Find the drop down element
+    2. Create “Select” object with that element
+    3. Use methods like select_by_index/select_by_value/select_by_visible_text
+		drop_down_elem = d.find_element(By.ID, "searchDropdownBox")
+		select_obj = Select(drop_down_elem)
+		select_obj.select_by_visible_text('Books')
+6. Mouse actions
+	1.Hover
+		from selenium.webdriver.common.action_chains import ActionChains
+		ac = ActionChains(d)
+		ac.move_to_element(signin_panel)
+	2.Scrolling
+		ac.scroll_to_element(ten_percent_elem)
+	3.Click(Right/Left/Double click)
+		ac.click(signin_elem)   ====> Left click
+		ac.double_click(cart_elem)     ====> Double click
+		ac.context_click(cart_elem)    ===> Right click
+    4. Drag and drop
+		ac.drag_and_drop(source_elem, destination_elem)
+7. Table Handling
+		table = d.find_elements(By.XPATH, "//table[@class='tg']/tbody/tr")
+		n = len(table)
+		for i in range(2,n+1):
+    			d.find_element(By.XPATH, "//table[@class='tg']/tbody/tr[%d]/td[3]/input"%i).click()
+8. Keyboard
+    1. elem.send_keys(Keys.RETURN + Keys.CONTROL + Keys.ALT)
+9. Browser Windows/Tabs
+    1. d.maximize_window()
+    2. d.close() ==> close is to close current window
+    3. d.quit() ==> quit all the windows
+    4. current_window_handle = d.current_window_handle   ===> Returns current window handle
+    5. window_handles = d.window_handles   ===> All currently opened window handles
+    6. d.switch_to.window(window_handles[1])  ===> to switch to particular window
+10. File upload/download
+    1. Upload
+		file_btn = d.find_element(By.NAME, 'upload')
+		file_btn.send_keys("/Users/govardhan/Downloads/selenium suite.png")
+	2. Download
+		options = webdriver.ChromeOptions()
+		prefs = {"download.default_directory": "/Users/govardhan/Downloads"}
+		options.add_experimental_option("prefs", prefs)
+		file_download_btn = d.find_element(By.NAME, 'download')
+		file_download_btn.click()
+11. Navigation commands
+    1. Back  ==> d.back()
+    2. Forwards    ==> d.forward()
+    3. Refresh   ==> d.refresh()
+12. Popups/Alarms/Notifications/Alerts
+    1. from selenium.webdriver.common.alert import Alert
+    2. a = Alert(d)
+    3. a.text ===> To get alert text
+    4. a.accept()   ===> To accept the alert
+    5. a.dismiss()  ==> to dismiss the alert
+    6. a.send_keys(“Keys to Send”)  ==> to send Keys to alert
+13. Screenshot (PrintScrn/Windows+shift+S)
+	d.save_screenshot("../screenshots/google.png")
+14. Synchronise Techniques
+    1. Waits
+        1. Implicit wait —> In a session, it is going to wait for specified seconds for each step
+            1. d.implicitly_wait(3)
+        2. Explicit wait --> Wait for certain condition to occur
+            1. from selenium.webdriver.support.ui import WebDriverWait
+            2. from selenium.webdriver.support import expected_conditions as ec
+            3. WebDriverWait(d, 10).until(ec.presence_of_element_located((By.XPATH, PRODUCT_XPATH % PRODUCT_INDEX)))
+        3. Fluent Wait
+        4. Sleep
+            1. time.sleep(5)
+
+
+

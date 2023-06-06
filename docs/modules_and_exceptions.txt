@@ -1,0 +1,38 @@
+modules - set of files
+Ways of importing modules
+========================
+1.Import a time package 
+import time
+time.sleep(20)
+
+2.Import all methods from time package
+from time import *
+sleep(5)
+
+3.Import only sleep method from time package
+from time import sleep
+sleep(5)
+
+4.Import only sleep method from time package as name sl
+from time import sleep as sl
+# from time package import only sleep as alias name as sl
+sl(5)
+
+How to make your own packages to be available for you to import
+===============================================================
+export your directory to be in PYTHONPATH env variable
+#export PYTHONPATH='/Users/govardhan/python'
+
+
+Exception handling
+==================
+use try except block to catch excceptions
+
+try:
+    # your code that you except that exception might come
+except:
+    #handle the exception accortingly
+    #if you want to know that exception message, then
+    #except Excpetion as e:
+    #except TypeError as e:
+    #except ZeroDivisionError as e:
