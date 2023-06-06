@@ -1,0 +1,197 @@
+Linux
+=======
+1. Files/Folders(Directory) access - Done
+2. Applications/Tasks/Processes access
+3. Config changes - Network/System
+
+
+What is a computer?
+	Hardware 		+ 			Software
+	1. CPU - Execution			1. Operating System
+	2. RAM 					2. Applications -
+						 Browsers/Media Players/Gaming/Doc Editors						- Need to load application into memory before executing	
+	3. I/O Devices - Input and Output
+		a. Monitor/Display - Output
+		b. Keyboard - Input
+		c. Mouse - Input
+
+What is an operating system?
+	- An operating system is system software that manages computer hardware and software resources, and provides common services for computer programs
+
+What are different operating System?
+	1. Windows
+	2. Unix/Linux - Linus Torvalds
+		- Fedora
+		- Redhat
+		- Ubuntu
+——————————————————
+
+1. Files/Folders(Directory) access
+    1. Write - 
+            1. Create - touch, mkdir
+            2. Update - Content/Rename - cp,mv
+            3. Delete - rm
+    2. Read
+        1. Open - ls, cd
+	
+	man - manual for all the commands
+		ex# man ls
+
+	
+Root directory 			/ 
+Home directory			~ 
+Previous directory		..
+Present Directory	  	.
+All				*
+Redirect output			>
+Append a string			>>
+CTRL + c			To terminate
+q				quit
+Space bar			To display by page vise
+Enter				To display by line vise
+| 				To output into other command
+CTRL + r			To search the history of commands used
+\				Escape the next character in a string
+	ls - to list content of a directory
+
+	cd - change directory
+
+Windows equivalent - Double click a folder - cd + ls
+
+pwd - present working directory -  to show the current directory that you are in
+
+govardhan            @                 admins-MacBook-Pro               ~                                                                            % 
+Username             @                 system hostname                       show u which directory you’re in.               Shell prompt, ex #, %
+
+mkdir   - to make/create a directory
+	mkdir <dir_name>
+
+touch - to create new empty file
+       touch <dir_name>
+
+cp - to copy files/directories from source to destination
+	cp -r <source> <destination> 
+
+mv - to move files/directories from source to destination
+	mv -r <source> <destination> 
+
+rm - to remove/delete files/directories 
+	rm -r <file/directory>
+
+echo - to echo a string to a console or a file
+	echo “Hello World”
+	echo “Hello World” > new_file
+
+cat - to display a content of a file
+	cat <file name>
+
+tail - to see the last lines of a file
+	tail <file_name>   =====> to display last 10 lines of the file
+	tail -20 <file_name>  =====> to display last 20 lines of the file
+	tail -f <file_name>    =====> to see the running content of a file
+
+head - to see the first lines of a file
+
+———————————
+vi - Vim text editor
+     vi <filename>    -> to open a file to edit
+	2 modes:
+		1. Insert mode - type i
+		2. Comand mode/Escape mode - type esc
+			:w - to write/save a file
+			:q - to quit/exit a file
+			:wq - to write and quit
+			:q!  - to quit without saving
+
+			yy - to copy a line
+				5yy - to copy 5 lines from current cursor
+			p - to paste in next line
+			dd - delete a line
+				3dd - to delete 5 lines from current cursor
+			u - undo a change
+
+			r - to replace a character
+	
+			:set nu - to set line number in a file
+
+			/searchstring - to search a given string in the file
+				n - next found string
+				shift n - to search before string which is matched
+                       :10 - to go to 10th line
+			gg - to go to line#1
+			shift g - to go to last line#
+			shift $ - to go to end of the line
+			shift ^ - to go start of the line
+			shift % - to go to end of the brackets pointing the cursor start of the bracket
+			:%s/Hello/Hi/g   - to search and replace a string in a file
+
+——————————————————————————————
+2. Applications/Tasks/Processes access
+	i.    ps - to see running processes
+		ps ========> to show you your currently running processes
+		ps -ax =======> to show you all the running processes even by other users/system related
+		ps -ax | more      =====> to output into other command use | 
+
+	ii. top  - to see CPU and Memory usage of all running processes
+	iii. kill - to terminate a running process
+		kill -9 <pid of process>   ======> to kill process with pid
+
+—————————————————————————————
+3. Useful commands
+	env - to see available environment variables
+	export - to set new env variable
+		export PYTHONPATH='/Users/govardhan/python'
+	grep - pattern search in files
+		grep -r “search” *    =====> shows you all matches in all the current directories
+		grep -rn “search” *  ====> shows u line numbers where it is matched
+		grep -rn “search” /tmp.    =====> shows u line numbers where it matched in files in /tmp directory
+		grep -rn “search” * | grep -v “nosearch”     =====> to vomit the results containing “nosearch” string
+
+	find - find the filenames matching with pattern
+		find . -name “math*”     ======> to give you the filenames starting with math in the current directory
+		find . -name “*math*”   ======> to give you the filename containing math in the current directory
+		find /tmp -name “*math*”    =====> to give you the filename containing “math” in the /tmp directory
+
+	sed - to search and replace a string in file
+		sed -i '' -e 's/div/division/g' tests/test_maths.py     =====> find a div and replacing that with division
+
+	awk - to modify the output based on what u need
+		awk '{print $3, $9}' /tmp/out    ==> print only 3 and 9th column values from file /tmp/out
+
+————————————————————————————
+4. Networking related commands
+
+        ssh - Secure shell to connect to a remote machine
+		ssh govardhan@192.168.1.4    ===> ssh to machine IP address using Govardhan user name
+		Ex: ssh clients: putty, mobaxterm , termius
+
+	ssh-keygen - to generate keys 
+		ls -la ~/.ssh    ===> files like id_rsa id_rsa.pub
+
+	ipconfig(windows)/ ifconfig(linux) - To show you the interfaces IP address
+	ping <ip> - To see if you can reach to some IP address or Hostname
+	traceroute <ip> ==> it will show you the path to reach to a particular IP through different hops/routers
+	lsof ===> to list down all currently open files/file descriptor
+	netstat   ===> to list all the connections between your machine to remote machine
+
+———————————————————————————
+5. Memory related commands
+	df - to show you disc free
+		df
+		df -h ==> to display all partitions disc usage in human readable format
+	free - to show you RAM memory usage
+		free -h ==> to display RAM memory usage
+	du ===> to See directory memory usage
+
+—————————————————————————
+6. User permissions related
+	chmod ====> to modify the permissions that user have one particular file or directory
+		chmod 777 file1    ====> 7 = 0(None) + 1(x-executable) + 2(w-write) + 4(r-read)
+	chown =====> change ownership of a file/dir
+	su ===> to login as root(which is equal to Administrator in windows)
+	sudo  <cmd> ===> if you are part of su(super users), then you can execute some commands at elevated permissions
+	
+
+		
+	
+
