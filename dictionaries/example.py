@@ -1,7 +1,7 @@
 d = {
         1: 'a',
         'gender': 'M',
-        'hi': 'Hey hello'
+        'hi': 'Hey Hello'
     }
 
 for k,v in d.items():
