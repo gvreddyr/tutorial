@@ -42,6 +42,44 @@ Generate your local machine ssh keys
 	- push your local changes in to your branch in the server
 	#git push --set-upstream origin ui_automation ===> in case this branch ui_automation isn’t available yet on the server
 
+#git branch
+	- to display the branches that you have locally and * indicates the branch that you’re in currently
+
+
+ProductX_Automation_Testing
+	- Add your machine ssh keys to the your profile on the server
+	- Copy the SSH code clone link
+		# git clone git@github.com:gvreddyr/tutorial.git
+	- Create branch using git checkout -b user1
+	- Modify the changes
+	- git add the modified files
+	- give a description about the changes using git commit -m “some change”
+	- push the changes your created making sure sure you are on that branch using git status and then git push
+	- It provides PR link
+	- Add reviewers and send it for review
+	- Address the review comments and again push to your branch so that PR automatically gets updated
+	- Let the reviewer approve and merge to parent branch
+
+
+
+Clone — This will copy from server
+Pull — We are getting the latest copy from the server
+Push — We are pushing the changes to server
+Fetch — To show you the updates
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
