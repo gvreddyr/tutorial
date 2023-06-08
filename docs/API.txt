@@ -1,0 +1,95 @@
+API(Application programming interface) Training
+-----------------------------------------------
+
+Methods
+    - Read      ---- GET    ----> Get is to get the object
+  w | - Create    ---- POST   ----> Post is to create a new object
+  r | - Update    ---- PUT    ----> Put is to update an existing object
+  i | - Delete    ---- DELETE ----> Delete is to delete an existing object
+  t |
+  e |
+
+
+https://j17lt.csb.app/   ----> URL - Uniform Resource Locator
+                            --> Domain which is mapped to particular IP address assigned a server
+                         ----> Protocol - http/https
+
+         Client <----------------------> Server
+            Request     <---------->    Response
+    1. Client -> Where you open up a browser and type in the URL
+    2. Server -> Where you host/run the webpages
+
+
+                          API
+Front End               <------>        Backend        <------->         Database
+Client                                  Server                           Server
+
+REST API
+    - REpresentational State Transfer
+JSON - JavaScript Object Notation
+
+https://reqres.in/  ---. Website to practise APIs
+https://reqres.in/api/users/   -- GET
+
+User with properties/attributes
+ { 'id'
+   'email'
+   'first_name'
+   'last_name'
+   'avatar'
+ }
+
+
+  {
+    "id": 1,
+    "email": "george.bluth@reqres.in",
+    "first_name": "George",
+    "last_name": "Bluth",
+    "avatar": "https://reqres.in/img/faces/1-image.jpg"
+  },
+
+
+[
+  {
+    "id": 1,
+    "email": "george.bluth@reqres.in",
+    "first_name": "George",
+    "last_name": "Bluth",
+    "avatar": "https://reqres.in/img/faces/1-image.jpg"
+  },
+  {
+    "id": 2,
+    "email": "janet.weaver@reqres.in",
+    "first_name": "Janet",
+    "last_name": "Weaver",
+    "avatar": "https://reqres.in/img/faces/2-image.jpg"
+  },
+  {
+    "id": 3,
+    "email": "emma.wong@reqres.in",
+    "first_name": "Emma",
+    "last_name": "Wong",
+    "avatar": "https://reqres.in/img/faces/3-image.jpg"
+  },
+  {
+    "id": 4,
+    "email": "eve.holt@reqres.in",
+    "first_name": "Eve",
+    "last_name": "Holt",
+    "avatar": "https://reqres.in/img/faces/4-image.jpg"
+  },
+  {
+    "id": 5,
+    "email": "charles.morris@reqres.in",
+    "first_name": "Charles",
+    "last_name": "Morris",
+    "avatar": "https://reqres.in/img/faces/5-image.jpg"
+  },
+  {
+    "id": 6,
+    "email": "tracey.ramos@reqres.in",
+    "first_name": "Tracey",
+    "last_name": "Ramos",
+    "avatar": "https://reqres.in/img/faces/6-image.jpg"
+  }
+]
