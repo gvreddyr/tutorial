@@ -2,7 +2,10 @@ API(Application programming interface) Training
 -----------------------------------------------
 
 Methods
-    - Read      ---- GET    ----> Get is to get the object
+      - Read      ---- GET    ----> Get is to get the object
+            - Searching/Filter
+            - Sorting - Ascend/Descending order
+            - Pagination - Pages of results
   w | - Create    ---- POST   ----> Post is to create a new object
   r | - Update    ---- PUT    ----> Put is to update an existing object
   i | - Delete    ---- DELETE ----> Delete is to delete an existing object
@@ -30,6 +33,44 @@ JSON - JavaScript Object Notation
 
 https://reqres.in/  ---. Website to practise APIs
 https://reqres.in/api/users/   -- GET
+
+HTTP Request/Response would contain
+    - Header
+        - URL
+        - Method
+        - Authentication details
+        - Content type
+    - Body
+        - Data that you want to pass it to backend
+    - Status code
+        - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+        - 2xx - Success Code
+            - 200 - OK
+            - 201 - Created
+            - 202 - Accepted
+        - 4xx - Client side errors
+            - 400 - Bad Request - Client request header/body is not correct
+            - 401 - Unauthorized - Credentials are not correct
+            - 403 - Forbidden - Even though you are authorized but you are allowed to access some operations
+            - 404 - Not found - URL is not correct
+            - 408 - Request timeout
+        - 5xx - Server side errors
+            - 500 - Internal Server Error
+            - 501 - Not implemented
+            - 504 - Gateway Timeout
+
+Path Parameters ===> u will pass in URL with /
+Query Parameters ===> u will pass in URL with ?
+
+API Definition
+    - Swagger document
+        - https://petstore.swagger.io/
+
+Postman
+    - Tool to test API's manually
+
+
+
 
 User with properties/attributes
  { 'id'
