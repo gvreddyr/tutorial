@@ -12,6 +12,9 @@ Methods
   t |
   e |
 
+PUT vs PATCH
+    - PUT - Need to send an entire body even when you want to updated only some attributes
+    - PATCH - You can only send the attributes that you want to update
 
 https://j17lt.csb.app/   ----> URL - Uniform Resource Locator
                             --> Domain which is mapped to particular IP address assigned a server
