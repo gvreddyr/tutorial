@@ -5,14 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.common.keys import Keys
 
+from utilities import *
+
 # URL
 URL = "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver"
-
+#create driver
+d = create_driver()
 # get the page
-d = webdriver.Chrome()
-d.get(URL)
-d.maximize_window()
-d.implicitly_wait(3)
+get_page(d, URL)
 
 # get alert
 d.find_element(By.NAME, "prompt").click()

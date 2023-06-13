@@ -3,11 +3,10 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+from utilities import *
 
-d = webdriver.Chrome()
-
-d.get("https://www.amazon.in/")
-d.maximize_window()
+d = create_driver()
+get_page(d,"https://www.amazon.in/")
 
 signin_panel = d.find_element(By.ID, "nav-link-accountList")
 

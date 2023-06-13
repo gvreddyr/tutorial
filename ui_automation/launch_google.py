@@ -1,5 +1,5 @@
-from selenium import webdriver
+from utilities import *
 
-driver = webdriver.Chrome()
+driver = create_driver()
 
-driver.get("https://www.google.com/")
+get_page(driver, "https://www.google.com/")

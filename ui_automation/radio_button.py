@@ -1,11 +1,12 @@
 import time
+from utilities import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-d = webdriver.Chrome()
-d.get("https://www.techlistic.com/p/selenium-practice-form.html")
-d.maximize_window()
+d = create_driver()
+get_page(d,"https://www.techlistic.com/p/selenium-practice-form.html")
+
 f_name_elem = d.find_element(By.NAME, "firstname")
 f_name_elem.send_keys("Rama")
 s_name_elem = d.find_element(By.NAME, "lastname")

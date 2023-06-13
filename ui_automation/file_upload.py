@@ -1,13 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from utilities import *
 
-d = webdriver.Chrome()
+d = create_driver()
 options = webdriver.ChromeOptions()
 prefs = {"download.default_directory": "/Users/govardhan/Downloads"}
 options.add_experimental_option("prefs", prefs)
 
-d.get("https://chercher.tech/practice/practice-pop-ups-selenium-webdriver")
-d.maximize_window()
+get_page(d, "https://chercher.tech/practice/practice-pop-ups-selenium-webdriver")
 
 # file upload
 file_btn = d.find_element(By.NAME, 'upload')
