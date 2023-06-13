@@ -1,0 +1,43 @@
+A testing framework is a set of guidelines or rules used for creating and designing test cases.
+    RULEs:
+    1. coding standards,
+    2. test-data handling methods, - wrappers for reading json, csv files
+    3. object repositories, - POM - Page object model
+    4. processes for storing test results, or -- report formats html
+    5. information on how to access external resources. -- config file
+
+    Benefits:
+    1. Improved test efficiency
+    2. Lower maintenance costs
+    3. Minimal manual intervention
+    4. Maximum test coverage
+    5. Reusability of code
+
+    Types:
+    1. Data-Driven Framework
+    2. Keyword-Driven Framework
+
+1. Avoid duplication of the code
+    - If any change, we have to go and change in all the duplicated places
+    - Make utility functions
+    - Class inheritance - OOPS concept
+2. To accommodate environmental changes
+    - Make some config files and keep those in config.ini
+    - Related to server, browser
+
+Decorator:
+    - Decorators are to add additional functionality to an existing function with you actually modifying it
+    by doing something before and after
+
+Rules:
+1. Test files has to be starting with test_*.py
+2. All test cases inside test file has to be with def test_*()
+3. Parameterize: To provide various inputs and expected values to evaluate some test function
+    @pytest.mark.parametrize("input_args,expected", [((2, 3), 6), ((2, 4), 8), ((2, 6), 12), ((2, 0), 0)])
+
+https://docs.pytest.org/en/stable/contents.html - pytest framework
+To run tests:
+#pytest  ==> collect all the test files starting test_ and run the test cases
+#pytest test_calc_add.py  ==> to run all the test cases in side a file
+#pytest test_calc_add.py::test_calc_add   ==> to run only one test
+#pytest -q ==> to run tests quite
