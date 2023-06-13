@@ -1,12 +1,11 @@
 import time
-
+from utilities import *
 from selenium import webdriver
 
 
-d = webdriver.Chrome()
+d = create_driver()
 
-d.get("https://www.browserstack.com/guide/download-file-using-selenium-python")
-d.maximize_window()
+get_page(d, "https://www.browserstack.com/guide/download-file-using-selenium-python")
 
 time.sleep(10)
 d.refresh()
