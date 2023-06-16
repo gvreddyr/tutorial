@@ -26,18 +26,45 @@ A testing framework is a set of guidelines or rules used for creating and design
     - Related to server, browser
 
 Decorator:
-    - Decorators are to add additional functionality to an existing function with you actually modifying it
+    - Decorators are to add additional functionality to an existing function without actually modifying it
     by doing something before and after
+    before
+    ------some code----
+    f()
+    after
+    ------some code----
+
 
 Rules:
 1. Test files has to be starting with test_*.py
 2. All test cases inside test file has to be with def test_*()
 3. Parameterize: To provide various inputs and expected values to evaluate some test function
     @pytest.mark.parametrize("input_args,expected", [((2, 3), 6), ((2, 4), 8), ((2, 6), 12), ((2, 0), 0)])
+4. Markers: Are useful to group the test cases
+    define the tests with @pytest.mark.<marker_name>
+    define the tests with skip if you want some tests to be skipped @pytest.mark.skip(reason="Skip it for now")
+
+    pytest -m <marker_name>
+    pytest -s
+5. Fixtures: To run some common steps for testcases where you applied this fixture
+    you define the fixture with @pytest.fixture in conftest.py
+    apply to a test case with this as an argument
+    if you have yield in fixture, then those steps are going to be executed after test case ran
+
 
 https://docs.pytest.org/en/stable/contents.html - pytest framework
+https://www.tutorialspoint.com/pytest/index.htm - tutorial point
 To run tests:
 #pytest  ==> collect all the test files starting test_ and run the test cases
 #pytest test_calc_add.py  ==> to run all the test cases in side a file
 #pytest test_calc_add.py::test_calc_add   ==> to run only one test
 #pytest -q ==> to run tests quite
+#pytest -v ==> to produce results in verbose more i.e with more details
+#pytest -k <string>  ==> search for filnames/ test case names containing the <string>
+#pytest -m <marker_name>  ==> search for test cases which are marked using @pytest.mark.<marker_name> and run
+#pytest -rsXx ==> to show you the skipped/xfailed tests which are marked with @pytest.mark.skip and @pytest.mark.xfail
+#pytest -k <string> -m <marker_name> -v
+#pytest -v --html="results/report.html" ==> to generate test report in html format in report.html, pre-req is to have a package "pytest-html" installed
+#pytest -v --junitxml="results/report.xml" ==> to generate test report in xml format in report.xml
+#pytest -n 3 -v ==> to run tests in parallel to get reults in quicker time running 3 workers, pre-req is to have a package "pytest-xdist"
+#pytest --maxfail=3 ==> to stop running the tests after 3 failures
