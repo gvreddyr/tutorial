@@ -1,0 +1,123 @@
+Why Python?
+    1. It is very easy language to learn - more of an english
+    2. It is open source - there are lot libraries/packages that are available for you to use it for free
+    3. PyPi.org where there 100k of libraries are available for free
+    4. Python - is so popular
+        - Automation Testing
+        - Backend development
+        - Data science
+    5. Development becomes much faster if you are coding python
+    6. Interpreted language - No compilation
+    www.python.org
+    www.pypi.org
+
+1. Variables - are a way to store the information/data/value
+2. Data types
+    1. Numbers
+    2. Strings
+    3. Lists
+    4. Tuples
+    5. Dictionary
+    6. Set
+3. Control Statements
+    1. if/elif/else
+    2. for
+    3. while
+4. Functions
+    1. Required/Non-Default argumets
+        - They have to be in defined first in the function definition arguments
+    2. Default/Optional arguments:
+        - They have to be after Required arguments
+    3. Named arguments
+        - They can be in any order
+        - Name has to be same as what you have defined in the func arguments
+5. OOPs(Object Oriented Programming) - Class and Objects
+    1. What is Class?
+        Ex: {a, b - properties           + methods = class
+            add/sub/div/mul} - methods
+    2. Inheritence
+        Advantages:
+            1. Reuse parent methods
+            2. Add new methods in child class
+            3. Override parent methods
+        Types of inheritence
+            1. Single
+            2. Multi-Level
+            3. Multiple
+    3. Object -> Instance of a class
+       self -> point to itself(object)
+       super() -> to call parent methods
+
+    4. OOPs concepts
+        1. Classes and Objects:
+            In Python, you can define classes as blueprints or templates for creating objects.
+            Objects are instances of classes that encapsulate data (attributes) and behavior (methods) related
+            to a specific entity or concept. Classes define the structure and behavior,
+            while objects represent individual instances based on that structure.
+
+        2. Encapsulation:
+            Encapsulation in Python is achieved by defining classes and using access modifiers
+            like public, private, and protected to control the visibility and accessibility of attributes and methods.
+            By convention, attributes and methods with a single underscore prefix (e.g., _attribute) are considered
+            as "protected," and those with double underscore prefix (e.g., __attribute) are considered as "private."
+
+        3. Inheritance:
+            Python supports single and multiple inheritance. Inheritance allows a class (subclass)
+            to inherit attributes and methods from another class (superclass).
+            Subclasses can extend, modify, or override the inherited attributes and methods.
+            In Python, you can inherit from multiple classes by specifying them in the class definition.
+
+        4. Polymorphism:
+            Polymorphism in Python allows objects to take on multiple forms or behaviors.
+            It is achieved through method overriding and method overloading.
+            Method overriding occurs when a subclass provides its implementation of a method
+            that is already defined in the superclass. Method overloading is achieved by defining
+            multiple methods with the same name but different parameters.
+
+        5. Abstraction:
+            Abstraction in Python is achieved by creating abstract classes using the abc module.
+            Abstract classes define common interfaces and behaviors that concrete classes can inherit and implement.
+            Abstract methods within abstract classes provide a contract that derived classes must fulfill.
+
+        6. Overloading:
+            Overloading in Python is achieved through the use of default arguments and variable-length arguments.
+            You can define functions or methods with default argument values, allowing them to be called with different
+            numbers of arguments. This provides flexibility and supports different usages of the same function or method.
+   =======================================
+6. List/Dict comprehensions
+    - Prepare a list /dict from an existing list
+
+7. lambda/map/filter
+    lambda - online anonymous function
+    map - apply a function for all the elements in iterator/list
+    filter - apply a function to filter the elements in iterator/list
+
+8. Print formats
+
+9. zip
+    to zip two lists into dict
+
+10. Scope - local/global
+
+11. Generators - yield
+    - Which ever functions having yield are called generators
+    - difference between return and yield
+        - return - once returned from function, it will not comeback
+        - yield - it will comeback and execute the code having after yield
+12. Decorators
+    - To add additional functionality to an existing function with you modifying the existing function
+    - you can do something before the function
+    - you can do something after the function
+13. Modules/Packages
+14. File handling - read/write to a file
+    open - mode 'r'/'w'/'a'/'x'
+    write/writelines
+    read/readlines
+    close
+15. Exceptions
+    try:
+    except:
+    finally:
+
+
+
