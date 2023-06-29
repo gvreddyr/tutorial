@@ -17,7 +17,7 @@ operations:
 '''
 
 
-file_path = "example.txt"
+file_path = "../data/example.txt"
 
 
 
